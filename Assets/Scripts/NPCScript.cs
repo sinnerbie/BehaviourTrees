@@ -11,6 +11,8 @@ public class NPCScript : MonoBehaviour
     [SerializeField] GameObject monaLisa;
     [SerializeField] GameObject gem;
     [SerializeField] GameObject van;
+    [SerializeField] GameObject alarm;
+    [SerializeField] GameObject loot;
     UnityEngine.AI.NavMeshAgent agent;
     BehaviourTree tree;
 
@@ -25,13 +27,17 @@ public class NPCScript : MonoBehaviour
     {
         tree = new BehaviourTree("NPC");
         /*Leaf moveToMonaLisa = new Leaf("MoveToMonaLisa", new MoveToTarget(transform, agent, monaLisa.transform));
-        tree.AddChild(moveToMonaLisa);
+        tree.AddChild(moveToMonaLisa);*/
 
-        
+        Leaf shouldEscape = new Leaf("ShouldEscape", new Condition(() => alarm.activeSelf));
+        Leaf shouldGoToVan = new Leaf("ShouldGoToVan", new Condition(() => loot != null));
+        Sequence Escape = new Sequence("Escape");
+        Escape.AddChild(shouldEscape);
+        Escape.AddChild(shouldGoToVan);
         //Patrolling
-        Leaf patrol = new Leaf("Patrol", new PatrolStrategy(transform, agent, waypoints));
+        /*Leaf patrol = new Leaf("Patrol", new PatrolStrategy(transform, agent, waypoints));
         tree.AddChild(patrol);*/
-        Leaf isMonaLisaPresent = new Leaf("IsMonaLisaPresent", new Condition(() => monaLisa.activeSelf));
+        /*Leaf isMonaLisaPresent = new Leaf("IsMonaLisaPresent", new Condition(() => monaLisa.activeSelf));
         Leaf moveToMonaLisa = new Leaf("MoveToMonaLisa", new ActionStrategy(() => agent.SetDestination(monaLisa.transform.position)));
         
         Sequence goToMonaLisa = new Sequence("GoToMonalisa");
@@ -50,7 +56,7 @@ public class NPCScript : MonoBehaviour
         goToSteal.AddChild(goToMonaLisa);
         goToSteal.AddChild(goToGem);
 
-        tree.AddChild(goToSteal);
+        tree.AddChild(goToSteal);*/
     }
 
     // Update is called once per frame

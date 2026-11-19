@@ -2335,10 +2335,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7438494788967298231, guid: b79d0b13355dc8f44b7956db61a82656, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 642336162}
+      addedObject: {fileID: 642336169}
     - targetCorrespondingSourceObject: {fileID: 7438494788967298231, guid: b79d0b13355dc8f44b7956db61a82656, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 642336164}
+      addedObject: {fileID: 642336162}
     - targetCorrespondingSourceObject: {fileID: 7438494788967298231, guid: b79d0b13355dc8f44b7956db61a82656, type: 3}
       insertIndex: -1
       addedObject: {fileID: 642336167}
@@ -2373,26 +2373,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &642336164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642336160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 801c0cb48637c804d94a7574de19be74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCScript
-  waypoints:
-  - {fileID: 631702879}
-  - {fileID: 2073423184}
-  - {fileID: 91046625}
-  - {fileID: 1748048754}
-  monaLisa: {fileID: 1904932022}
-  gem: {fileID: 1952432150}
-  van: {fileID: 894646487}
 --- !u!136 &642336166
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2443,6 +2423,80 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &642336169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642336160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
+  m_Graph: {fileID: 8500735126452546088, guid: 4e43dce1639e38f498f68cc22be81c54, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 6944113457139548492
+  - rid: 6944113457139548529
+  - rid: 6944113457139548819
+  - rid: 6944113457778655822
+  - rid: 6944113457778655823
+  - rid: 6944113458040799256
+  m_OriginalGraph: {fileID: 8500735126452546088, guid: 4e43dce1639e38f498f68cc22be81c54, type: 2}
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 6944113457139548492
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 642336160}
+    - rid: 6944113457139548529
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 12714297717446392144
+          m_Value1: 11686775713257230770
+        Name: Gem
+        m_Value: {fileID: 1952432150}
+    - rid: 6944113457139548819
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 2932750263646186903
+          m_Value1: 5591545970006017977
+        Name: DistanceThreshold
+        m_Value: 1.5
+    - rid: 6944113457778655822
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 161598285998610068
+          m_Value1: 14206880664453469698
+        Name: MonaLisa
+        m_Value: {fileID: 1904932022}
+    - rid: 6944113457778655823
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 5413113017621210814
+          m_Value1: 5670235360623071146
+        Name: Van
+        m_Value: {fileID: 894646487}
+    - rid: 6944113458040799256
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 8413999101992632909
+          m_Value1: 2794048115306730113
+        Name: LisaLocation
+        m_Value: {fileID: 1939059059}
 --- !u!1 &716268924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6770,7 +6824,7 @@ Transform:
   m_GameObject: {fileID: 1939059059}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.009, y: -0.104, z: -0.337}
+  m_LocalPosition: {x: 0.009, y: -0.428, z: -0.644}
   m_LocalScale: {x: 0.7326543, y: 0.44325393, z: 0.56737727}
   m_ConstrainProportionsScale: 0
   m_Children: []
